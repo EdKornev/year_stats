@@ -1,0 +1,12 @@
+ext {
+    common = [
+            compileSdkVersion : 28,
+            minSdkVersion : 21,
+            targetSdkVersion : 28,
+            version : [
+                    code : 1,
+                    name : '0.0.1',
+                    database: 1
+            ]
+    ]
+}

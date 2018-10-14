@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+apply from: '../gradle/common.gradle'
+
+android {
+    compileSdkVersion common.compileSdkVersion
+    defaultConfig {
+        applicationId "com.edkornev.yearstats"
+        minSdkVersion common.minSdkVersion
+        targetSdkVersion common.targetSdkVersion
+        versionCode common.version.code
+        versionName common.version.name
+        multiDexEnabled true
+
+        buildConfigField("int", "DATABASE_VERSION", "${common.version.database}")
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "androidx.appcompat:appcompat:$appcompatVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
+    implementation "androidx.recyclerview:recyclerview:$recyclerviewVersion"
+    implementation "com.google.android.material:material:$designVersion"
+
+    implementation "com.google.dagger:dagger:$daggerVersion"
+//    annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+
+    implementation "androidx.room:room-runtime:$roomVersion"
+//    annotationProcessor "androidx.room:room-compiler:$roomVersion"
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycleVersion"
+//    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycleVersion"
+
+    implementation "io.reactivex.rxjava2:rxjava:$rxJava2"
+
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "com.android.support.test:runner:$androidSupportTestRunnerVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$androidSupportTestEspressoVersion"
+    testImplementation "androidx.room:room-testing:$roomVersion"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+}
