@@ -14,4 +14,7 @@ interface BookDao {
 
     @Query("DELETE FROM BookEntity WHERE id=:id")
     fun delete(id: String): Int
+
+    @Query("SELECT count(*) FROM BookEntity")
+    fun count(): Int
 }

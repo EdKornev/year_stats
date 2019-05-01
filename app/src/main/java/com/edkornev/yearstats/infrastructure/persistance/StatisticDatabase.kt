@@ -7,10 +7,11 @@ import com.edkornev.yearstats.infrastructure.persistance.dao.BookDao
 import com.edkornev.yearstats.infrastructure.persistance.entity.BookEntity
 
 @Database(
-        entities = [
-            BookEntity::class
-        ],
-        version = BuildConfig.DATABASE_VERSION
+    entities = [
+        BookEntity::class
+    ],
+    version = BuildConfig.DATABASE_VERSION,
+    exportSchema = false
 )
 abstract class StatisticDatabase : RoomDatabase() {
 

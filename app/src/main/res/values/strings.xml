@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Year Stats</string>
+
+    <string name="default_btn_save">Save</string>
+
+    <!-- region Review activity-->
+    <string name="review_count_of_book">Count of book: %d</string>
+    <string name="review_btn_add_book">Add book</string>
+    <!-- endregion -->
+
+    <!-- region Book add activity -->
+    <string name="book_add_et_title">Title</string>
+    <string name="book_add_et_author">Author</string>
+    <string name="book_add_et_genre">Genre</string>
+    <!-- endregion -->
+
 </resources>
