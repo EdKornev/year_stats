@@ -30,7 +30,7 @@ class BookAddActivity : AppCompatActivity() {
             .build()
             .inject(this)
 
-        viewModel = ViewModelProviders.of(this, viewModelFactory)[BookAddViewModel::class.java]
+        viewModel = viewModelFactory.create(BookAddViewModel::class.java)
 
         val binding: BookAddActivityBinding = DataBindingUtil.setContentView(this, R.layout.book_add_activity)
         binding.book = viewModel

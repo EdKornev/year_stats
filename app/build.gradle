@@ -46,6 +46,7 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:$daggerVersion"
 
     implementation "androidx.room:room-runtime:$roomVersion"
+    implementation "androidx.room:room-rxjava2:$roomVersion"
     kapt "androidx.room:room-compiler:$roomVersion"
 
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycleVersion"
@@ -53,10 +54,10 @@ dependencies {
 //    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycleVersion"
 
     implementation "io.reactivex.rxjava2:rxjava:$rxJava2"
+    implementation "io.reactivex.rxjava2:rxandroid:$androidRXJava2"
 
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "com.android.support.test:runner:$androidSupportTestRunnerVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$androidSupportTestEspressoVersion"
     testImplementation "androidx.room:room-testing:$roomVersion"
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 }

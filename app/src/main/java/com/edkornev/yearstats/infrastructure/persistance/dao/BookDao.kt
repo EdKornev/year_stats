@@ -2,6 +2,7 @@ package com.edkornev.yearstats.infrastructure.persistance.dao
 
 import androidx.room.*
 import com.edkornev.yearstats.infrastructure.persistance.entity.BookEntity
+import io.reactivex.Single
 
 @Dao
 interface BookDao {
@@ -16,5 +17,5 @@ interface BookDao {
     fun delete(id: String): Int
 
     @Query("SELECT count(*) FROM BookEntity")
-    fun count(): Int
+    fun count(): Single<Int>
 }
